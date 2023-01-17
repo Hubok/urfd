@@ -77,19 +77,18 @@ bool CUSRPProtocol::Initialize(const char *type, const EProtocol ptype, const ui
 			char *ip;
 			char *port;
 			char *mod;
-			if ((ip = ::strtok(ptr1, ";")) != nullptr)
+			char *call;
+			if (((ip = ::strtok(ptr1, ";")) != nullptr) && 
+			    ((port = ::strtok(nullptr, ";")) != nullptr) && 
+			    ((mod = ::strtok(nullptr, ";")) != nullptr) && 
+				((call = ::strtok(nullptr, ";")) != nullptr))
 			{
-				if ((port = ::strtok(nullptr, ";")) != nullptr)
-				{
-					if ((mod = ::strtok(nullptr, ";")) != nullptr)
-					{
-						uint32_t ui = atoi(port);
-						CIp Ip(AF_INET, ui, ip);
-						auto newclient = std::make_shared<CUSRPClient>(cs, Ip);
-						newclient->SetReflectorModule(*mod);
-						clients->AddClient(newclient);
-					}
-				}
+				uint32_t ui = atoi(port);
+				CIp Ip(AF_INET, ui, ip);
+				CCallsign cs2(call);
+				auto newclient = std::make_shared<CUSRPClient>(cs2, Ip);
+				newclient->SetReflectorModule(*mod);
+				clients->AddClient(newclient);
 			}
 			ptr1 = ptr2+1;
 		}
