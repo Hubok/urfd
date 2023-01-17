@@ -15,10 +15,11 @@ Optional software vocoding of AMBE+2(DMR/YSF/NXDN) can be done using md380_vocod
 
 Numerous fixes like late entry recognition from modes like YSF that are otherwise ignored by the original reflector when no header has been received.
 
-The USRP Clients are read from a file defined in Main.h.  The format of this file is ipaddr;port;module;callsign; one host per line, ex:
+The USRP Clients are read from a file defined in Main.h. 
+The format of this file is ipaddr;port;linked-module;callsign;cs-module; (cs-module is optional). One host per line, ex:
 
 ```bash
-192.168.1.100;32000;A;CALL1;
+192.168.1.100;32000;A;CALL1;G;
 192.168.1.101;32001;B;CALL2;
 ```
 

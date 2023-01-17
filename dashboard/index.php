@@ -156,8 +156,8 @@ if ($CallingHome['Active']) {
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li class="navbar-info">V#Q<?php echo $Reflector->GetVersion(); ?> - Dashboard
-                    v<?php echo $PageOptions['DashboardVersion']; ?></li>
+                <li class="navbar-info"><a href="https://github.com/NahmiiVuhuni/urfd" style="margin: 0; padding: 0;">
+                    URFD <?php echo $Reflector->GetVersion(); ?> - Dashboard v<?php echo $PageOptions['DashboardVersion']; ?></li>
                 <li class="navbar-info">Service
                     uptime: <?php echo FormatSeconds($Reflector->GetServiceUptime()); ?></li>
             </ul>
