@@ -171,8 +171,9 @@ enum class EProtocol { any, none, dextra, dplus, dcs, bm, urf, dmrplus, dmrmmdvm
 #define USRP_PORT                      34001                               // UDP port
 #define USRP_KEEPALIVE_PERIOD          1                                   // in seconds
 #define USRP_KEEPALIVE_TIMEOUT         (USRP_KEEPALIVE_PERIOD*10)         // in seconds
-#define USRP_AUTOLINK_ENABLE             1                                   // 1 = enable, 0 = disable auto-link
-#define USRP_AUTOLINK_MODULE             'A'                                 // module for client to auto-link to
+// the following 2 defines are now in USRPCLIENTS_PATH
+//#define USRP_AUTOLINK_ENABLE             1                                   // 1 = enable, 0 = disable auto-link
+//#define USRP_AUTOLINK_MODULE             'A'                                 // module for client to auto-link to
 #define USRP_DEFAULT_CALLSIGN			"ALLSTAR"
 #define USRPCLIENTS_PATH                "/home/pi/USRPClients.txt"        // format ip;port; per line for each ALLSTAR/USRP node
 
